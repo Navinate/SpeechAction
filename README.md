@@ -1,6 +1,6 @@
 # SpeechAction
 
-This is a simple mod that adds the ability to say keywords to perform emotes.  
+This is a simple BepInEx mod for Lethal Company that adds the ability to say keywords to perform emotes.  
 
 Right now you can say "dance" or "party" to perform the dance emote or you can say "point" or "there" (less reliable) to perform the point emote.
 
