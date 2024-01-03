@@ -14,7 +14,7 @@ namespace SpeechAction
     {
         private const String modGUID = "Navinate.SpeechAction";
         private const String modName = "SpeechAction";
-        private const String modVersion = "0.0.1";
+        private const String modVersion = "0.0.2";
 
         private readonly Harmony harmony = new Harmony(modGUID);
         private static Plugin Instance;
@@ -58,18 +58,24 @@ namespace SpeechAction
 
         void StartDanceEmote()
         {
-            player.timeSinceStartingEmote = 0f;
-            player.performingEmote = true;
-            player.playerBodyAnimator.SetInteger("emoteNumber", 1);
-            player.StartPerformingEmoteServerRpc();
+            if (((player.IsOwner && player.isPlayerControlled && (!player.IsServer || player.isHostPlayerObject)) || player.isTestingPlayer) && !(player.timeSinceStartingEmote < 0.5f))
+            {
+                player.timeSinceStartingEmote = 0f;
+                player.performingEmote = true;
+                player.playerBodyAnimator.SetInteger("emoteNumber", 1);
+                player.StartPerformingEmoteServerRpc();
+            }
         }
 
         void StartPointEmote()
         {
-            player.timeSinceStartingEmote = 0f;
-            player.performingEmote = true;
-            player.playerBodyAnimator.SetInteger("emoteNumber", 2);
-            player.StartPerformingEmoteServerRpc();
+            if (((player.IsOwner && player.isPlayerControlled && (!player.IsServer || player.isHostPlayerObject)) || player.isTestingPlayer) && !(player.timeSinceStartingEmote < 0.5f))
+            {
+                player.timeSinceStartingEmote = 0f;
+                player.performingEmote = true;
+                player.playerBodyAnimator.SetInteger("emoteNumber", 2);
+                player.StartPerformingEmoteServerRpc();
+            }
         }
     }
 }
