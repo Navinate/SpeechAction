@@ -14,7 +14,7 @@ namespace SpeechAction
     {
         private const String modGUID = "Navinate.SpeechAction";
         private const String modName = "SpeechAction";
-        private const String modVersion = "0.0.2";
+        private const String modVersion = "0.0.3";
 
         private readonly Harmony harmony = new Harmony(modGUID);
         private static Plugin Instance;
